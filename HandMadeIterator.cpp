@@ -28,6 +28,7 @@ void HandMadeIterator<T>::setUpIterator(T* sequence, int size) {
     this->sequence = sequence;
     this->tail = &sequence[0];
     this->head = &sequence[0];
+    this->counter = 0;
 }
 
 template <class T>
