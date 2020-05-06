@@ -3,18 +3,25 @@
 //
 
 #include "HandMadeIterator.h"
-template<class T>
-    HandMadeIterator::HandMadeIterator(T *squence, int size) {
-
+template <class T>
+HandMadeIterator<T>::HandMadeIterator(T* sequence, int size) {
+    this->size = size;
+    this->sequence = sequence;
 }
-    HandMadeIterator::HandMadeIterator(T* someSequence,int someSize) {
-        this->sequence = someSequence;
-        this->size = someSize;
-        this->tail = someSequence[0];
-        this->head = someSequence[0];
+
+template <class T>
+void HandMadeIterator<T>::operator++(int){
+    this->counter++;
+    this->tail = &this->sequence[this->counter % this->size];
+    std::cout << *tail << std::endl;
+}
+
+template <class T>
+void HandMadeIterator<T>::operator--(int) {
+    this->counter--;
+    if(this->counter < 1){
+        this->counter = this->size + this->counter;
     }
-    void HandMadeIterator::operator++() {
-        this->counter++;
-        this->tail = &this->sequence[(this->counter - 1) % this->size];
-        std::cout << *tail << std::endl;
-    }
+    this->tail = &this->sequence[this->counter  % this->size];
+    std::cout << *tail << "counter: " << this->counter << std::endl;
+}

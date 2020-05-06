@@ -7,12 +7,21 @@ void shit(int* some){
 }
 int main() {
     int a[4];
-    a[0] = 2;
-    a[1] = 23;
-    a[2] = 23;
-    a[3] = 321;
+    a[0] = 1;
+    a[1] = 2;
+    a[2] = 3;
+    a[3] = 4;
 
     HandMadeIterator<int> blyadina(&a[0], 4);
-    shit(a);
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
+    blyadina--;
 
 }
