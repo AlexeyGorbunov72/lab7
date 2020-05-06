@@ -10,8 +10,9 @@ class HandMadeIterator{
     int counter = 0;
     T* sequence;
     public:
-        HandMadeIterator(T* sequence, int size);
+        HandMadeIterator();
         void operator++(int);
         void operator--(int);
+        void setUpIterator(T* sequence, int size);
 };
 

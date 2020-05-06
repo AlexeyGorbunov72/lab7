@@ -1,5 +1,6 @@
 #include <iostream>
 #include "HandMadeIterator.cpp"
+#include "CircularBuffer.cpp"
 void shit(int* some){
     int* hui = &some[0];
     std::cout << *hui;
@@ -12,16 +13,7 @@ int main() {
     a[2] = 3;
     a[3] = 4;
 
-    HandMadeIterator<int> blyadina(&a[0], 4);
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
-    blyadina--;
+
+    CircularBuffer<int> ochko(&a[0]);
 
 }

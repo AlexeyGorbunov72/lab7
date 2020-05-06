@@ -3,7 +3,11 @@
 //
 #pragma once
 
-
+template <class T>
 class CircularBuffer {
+    HandMadeIterator<T> iterator();
 
+public:
+    CircularBuffer(T* data);
+    void append(T value);
 };

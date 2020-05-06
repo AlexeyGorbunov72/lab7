@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/Retard/CLionProjects/lab7/CircularBuffer.cpp
+CircularBuffer.h
+/Users/Retard/CLionProjects/lab7/CircularBuffer.h
+
+/Users/Retard/CLionProjects/lab7/CircularBuffer.h
+
 /Users/Retard/CLionProjects/lab7/HandMadeIterator.cpp
 HandMadeIterator.h
 /Users/Retard/CLionProjects/lab7/HandMadeIterator.h
@@ -17,4 +23,6 @@ iostream
 -
 HandMadeIterator.cpp
 /Users/Retard/CLionProjects/lab7/HandMadeIterator.cpp
+CircularBuffer.cpp
+/Users/Retard/CLionProjects/lab7/CircularBuffer.cpp
 

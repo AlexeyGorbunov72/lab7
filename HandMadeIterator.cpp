@@ -4,10 +4,7 @@
 
 #include "HandMadeIterator.h"
 template <class T>
-HandMadeIterator<T>::HandMadeIterator(T* sequence, int size) {
-    this->size = size;
-    this->sequence = sequence;
-}
+HandMadeIterator<T>::HandMadeIterator() {}
 
 template <class T>
 void HandMadeIterator<T>::operator++(int){
@@ -24,4 +21,9 @@ void HandMadeIterator<T>::operator--(int) {
     }
     this->tail = &this->sequence[this->counter  % this->size];
     std::cout << *tail << "counter: " << this->counter << std::endl;
+}
+template  <class T>
+void HandMadeIterator<T>::setUpIterator(T* sequence, int size) {
+    this->size = size;
+    this->sequence = sequence;
 }
