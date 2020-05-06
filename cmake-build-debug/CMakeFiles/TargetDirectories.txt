@@ -1,0 +1,3 @@
+/Users/Retard/CLionProjects/lab7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Retard/CLionProjects/lab7/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Retard/CLionProjects/lab7/cmake-build-debug/CMakeFiles/lab7.dir
