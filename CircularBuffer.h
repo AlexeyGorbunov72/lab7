@@ -5,9 +5,10 @@
 
 template <class T>
 class CircularBuffer {
-    HandMadeIterator<T> iterator();
+    HandMadeIterator<T> iterator;
 
 public:
-    CircularBuffer(T* data);
+    CircularBuffer(T* data, int size);
     void append(T value);
+    void show();
 };

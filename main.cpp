@@ -7,13 +7,14 @@ void shit(int* some){
 
 }
 int main() {
-    int a[4];
-    a[0] = 1;
-    a[1] = 2;
-    a[2] = 3;
-    a[3] = 4;
-
-
-    CircularBuffer<int> ochko(&a[0]);
-
+    int a[5];
+    CircularBuffer<int> ochko(a, 5);
+    ochko.append(10);
+    ochko.append(11);
+    ochko.append(12);
+    ochko.append(111);
+    ochko.append(34243);
+    ochko.append(123321);
+    ochko.append(-131231);
+    ochko.show();
 }
