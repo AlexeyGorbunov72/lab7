@@ -18,7 +18,7 @@ int main() {
 //    }
 
     buffer.addFirst(3);
-   
+
     buffer.show();
     for (int i = 0; i < 4; ++i) {
         std::cout << buffer[i] << ' ';
