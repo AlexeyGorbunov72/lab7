@@ -42,7 +42,7 @@ void CircularBuffer<T>::show() {
         std::cout << *iterator.getTail() << " | " << iterator.getTail() << " | " << iterator.getHead() << std::endl;
         iterator--;
     }
-    if(this->isFull()){
+    if(this->isFull() || this->kostul){
         std::cout<< *iterator.getHead() << std::endl;
     }
 
@@ -130,4 +130,68 @@ void CircularBuffer<T>::remove(unsigned int at) {
         this->append(bufferOfData[(i + supportVariable) % this->size]);
 
     }
+}
+template <class T>
+HandMadeIterator<T> CircularBuffer<T>::getIterator() {
+    return this->iterator;
+}
+template <class T>
+T CircularBuffer<T>::operator[](const int index) {
+    int indexOfHead;
+    int counter_ = 0;
+    for(int i = 0; i  < this->size; i++){
+        if(&this->data[i] == this->iterator.getHead()){
+            indexOfHead = i;
+        }
+    }
+    if(!this->isFull()){
+
+        for(int i = indexOfHead + 1; i < this->size + indexOfHead; i++){
+            counter_++;
+           // std::cout<< this->data[i % this->size] <<std::endl;
+            if(index + 1  == counter_){
+                return this->data[i % this->size];
+            }
+        }
+
+    }
+    else{
+        for(int i = indexOfHead; i < this->size + indexOfHead; i++){
+            counter_++;
+           // std::cout<< this->data[i % this->size] <<std::endl;
+            if(index + 1  == counter_){
+                return this->data[i % this->size];
+            }
+        }
+    }
+
+}
+
+template <class T>
+void CircularBuffer<T>::addFirst(T value) {
+    if(!this->isFull()){
+        *(this->iterator.getHead()) = value;
+        this->counterOfItems++;
+        this->kostul = true;
+    }
+    else{
+        int indexOfHead;
+
+        for(int i = 0; i  < this->size; i++){
+            if(&this->data[i] == this->iterator.getHead()){
+                indexOfHead = i;
+            }
+        }
+        int toSet= indexOfHead - 1;
+        if(toSet < 0){
+            toSet = this->size + toSet;
+        }
+        this->data[toSet] = value;
+
+        this->iterator.setHead(&this->data[toSet]);
+    }
+}
+template <class T>
+void CircularBuffer<T>::addBack(T value) {
+    this->append(value);
 }

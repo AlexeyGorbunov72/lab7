@@ -10,6 +10,9 @@ template <class T>
 void HandMadeIterator<T>::operator++(int){
     this->counter++;
     this->tail = &this->sequence[this->counter % this->size];
+    if (this->tail == this->head){
+        this->head =  &this->sequence[(this->counter + 1) % this->size];
+    }
     //std::cout << *tail << std::endl;
 }
 
@@ -33,10 +36,10 @@ void HandMadeIterator<T>::setUpIterator(T* sequence, int size) {
 
 template <class T>
 void HandMadeIterator<T>::operator<<(T value) {
+    *this->tail = value;
     if (this->tail == this->head){
         this->head =  &this->sequence[(this->counter + 1) % this->size];
     }
-    *this->tail = value;
 }
 
 template <class T>

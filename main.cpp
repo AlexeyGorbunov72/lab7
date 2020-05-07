@@ -8,10 +8,19 @@ void shit(int* some){
 }
 int main() {
     CircularBuffer<int> ochko(4);
-    ochko.append(1);
-    ochko.append(2);
-    ochko.append(3);
-    ochko.remove(2);
-    ochko.show();
+    ochko.append(2213);
+    ochko.append(11);
 
+
+//    std::sort(ochko.getIterator().getHead(), ochko.getIterator().getTail());
+//    for (int i = 0; i < 4; ++i) {
+//        std::cout << ochko[i] << ' ';
+//    }
+
+    ochko.addFirst(3);
+    ochko.addFirst(123);
+    ochko.show();
+    for (int i = 0; i < 4; ++i) {
+        std::cout << ochko[i] << ' ';
+    }
 }
